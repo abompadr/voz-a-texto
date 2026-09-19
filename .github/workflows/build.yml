@@ -24,12 +24,21 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x gradlew
 
-      - name: Build debug APK
-        run: ./gradlew assembleDebug --stacktrace
+      - name: Decode keystore
+        run: echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > $GITHUB_WORKSPACE/voz-a-texto.jks
+
+      - name: Build signed release APK
+        run: ./gradlew assembleRelease --stacktrace
+        env:
+          SIGNING_STORE_FILE: ${{ github.workspace }}/voz-a-texto.jks
+          SIGNING_STORE_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          SIGNING_KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          SIGNING_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: voz-a-texto-debug
-          path: app/build/outputs/apk/debug/app-debug.apk
+          name: voz-a-texto-release
+          path: app/build/outputs/apk/release/app-release.apk
           retention-days: 30
+
