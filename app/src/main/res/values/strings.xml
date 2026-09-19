@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Voz a Texto</string>
+    <string name="status_ready">Listo</string>
+    <string name="status_listening">Escuchando…</string>
+    <string name="status_processing">Procesando…</string>
+    <string name="hint_transcription">La transcripción aparecerá aquí</string>
+    <string name="btn_copy">Copiar</string>
+    <string name="btn_save">Guardar</string>
+    <string name="btn_clear">Limpiar</string>
+    <string name="saved_ok">Guardado: %1$s</string>
+    <string name="nothing_to_save">No hay texto para guardar</string>
+    <string name="nothing_to_copy">No hay texto para copiar</string>
+    <string name="copied">Copiado al portapapeles</string>
+    <string name="history_title">Archivos guardados</string>
+    <string name="no_history">No hay archivos guardados aún</string>
+    <string name="mic_start">Iniciar grabación</string>
+    <string name="mic_stop">Detener grabación</string>
+    <string name="error_no_speech">No se detectó voz</string>
+    <string name="error_unavailable">Reconocimiento no disponible</string>
+    <string name="error_generic">Error: %1$s</string>
+    <string name="permission_required">Se necesita permiso de micrófono</string>
+</resources>
